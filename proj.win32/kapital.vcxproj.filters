@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Scene">
+      <UniqueIdentifier>{b30ce8ae-2c1f-4b08-8dca-8f070acbb75a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\View">
+      <UniqueIdentifier>{237fe32a-28a6-4c99-bfae-99cf8ed53da2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\View\Map">
+      <UniqueIdentifier>{b96899d7-198f-4e6b-a0a4-0fa6ea12fb5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Rage">
+      <UniqueIdentifier>{918dc2c0-4814-433e-80fa-d59fc33418bb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LogoScene.cpp">
+      <Filter>Classes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MapView.cpp">
+      <Filter>Classes\View\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\RegionMap.cpp">
+      <Filter>Classes\View\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\WorldMap.cpp">
+      <Filter>Classes\View\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MainScene.cpp">
+      <Filter>Classes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Rage.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Scroller.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AuthorizationScene.cpp">
+      <Filter>Classes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ChatRage.cpp">
+      <Filter>Classes\Rage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ProfilRage.cpp">
+      <Filter>Classes\Rage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\WorldRage.cpp">
+      <Filter>Classes\Rage</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MenuView.cpp">
+      <Filter>Classes\View</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LogoScene.h">
+      <Filter>Classes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MapView.h">
+      <Filter>Classes\View\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\RegionMap.h">
+      <Filter>Classes\View\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\WorldMap.h">
+      <Filter>Classes\View\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainScene.h">
+      <Filter>Classes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Rage.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scroller.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AuthorizationScene.h">
+      <Filter>Classes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ChatRage.h">
+      <Filter>Classes\Rage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ProfilRage.h">
+      <Filter>Classes\Rage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\WorldRage.h">
+      <Filter>Classes\Rage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MenuView.h">
+      <Filter>Classes\View</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
