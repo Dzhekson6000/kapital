@@ -20,7 +20,7 @@ private:
 	MenuView* _menuView;
 	void goToRage(int n);
 public:
-	void addRage(Rage* rage);
+	void addRage(Rage* rage, int n);
 	virtual bool touchBegan(Touch* touch, Event* event);
 	virtual void touchMoved(Touch* touch, Event* event);
 	virtual void touchEnded(Touch* touch, Event* event);

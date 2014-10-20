@@ -27,10 +27,10 @@ bool MainScene::init(int id, std::string key) {
 
 	scroller = Scroller::create();
 	this->addChild(scroller);
-
-	scroller->addRage(ChatRage::create() );
-	scroller->addRage(WorldRage::create() );
-	scroller->addRage(ProfilRage::create() );
+	
+	scroller->addRage(ChatRage::create(), 1);
+	scroller->addRage(WorldRage::create(), -1);
+	scroller->addRage(ProfilRage::create(), 2);
 	
 	
 	return true;

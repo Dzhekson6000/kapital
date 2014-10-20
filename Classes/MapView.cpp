@@ -11,7 +11,5 @@ bool MapView::init()
 	_worldMap = WorldMap::create();
 	_regionMap = RegionMap::create();
 	this->addChild(_worldMap);
-	this->removeChild(_worldMap);
-	this->addChild(_regionMap);
 	return true;
 }

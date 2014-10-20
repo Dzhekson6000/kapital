@@ -27,16 +27,16 @@ bool Scroller::init()
 	return true;
 }
 
-void Scroller::addRage(Rage* rage)
+void Scroller::addRage(Rage* rage, int n)
 {
 	rage->setPositionX( _size.width*rage->getId() );
-	_scroll->addChild(rage);
+	_scroll->addChild(rage, n);
 	_rageList.push_back(rage);
 }
 
 bool Scroller::touchBegan(Touch* touch, Event* event)
 {
-	if( (touch->getLocation().x < 300 || touch->getLocation().x >  _size.width-300) && !_moved)
+	if( (touch->getLocation().x < 50 || touch->getLocation().x >  _size.width-50) && !_moved)
 	{
 		_moved = true;
 		_xMoved = touch->getLocation().x;
