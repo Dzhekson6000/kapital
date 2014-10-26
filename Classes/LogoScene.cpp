@@ -36,7 +36,7 @@ bool LogoScene::init()
 void LogoScene::timeout(float dt)
 {
 	_time+=dt;
-	if(_time > 5.0)
+	if(_time > 0.5)
 	{
 		Director::getInstance()->pushScene(AuthorizationScene::create()->getScene());//переходим на главное окно
 	}

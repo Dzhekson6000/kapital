@@ -19,6 +19,7 @@ private:
 	std::vector<Rage*> _rageList;
 	MenuView* _menuView;
 	void goToRage(int n);
+	void updateActive();
 public:
 	void addRage(Rage* rage, int n);
 	virtual bool touchBegan(Touch* touch, Event* event);

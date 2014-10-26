@@ -12,8 +12,10 @@ private:
 protected:
 	Size _size;
 	int _id;
+	bool _active;
 public:
 	int getId();
+	virtual void setActive(bool active){_active = active;}
 	
 };
 

@@ -22,6 +22,15 @@
     <Filter Include="Classes\Rage">
       <UniqueIdentifier>{918dc2c0-4814-433e-80fa-d59fc33418bb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\View\Menu">
+      <UniqueIdentifier>{fe544dca-81c7-4e6a-9e9e-4ee4375c0253}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\View\Map\LayerWorld">
+      <UniqueIdentifier>{34524a71-ebd5-4a42-adbf-dde3bd46d5a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\View\Map\LayerMap">
+      <UniqueIdentifier>{27fe3967-05e8-465e-86eb-41813ccdcee1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -32,15 +41,6 @@
     </ClCompile>
     <ClCompile Include="..\Classes\LogoScene.cpp">
       <Filter>Classes\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\MapView.cpp">
-      <Filter>Classes\View\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\RegionMap.cpp">
-      <Filter>Classes\View\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\WorldMap.cpp">
-      <Filter>Classes\View\Map</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\MainScene.cpp">
       <Filter>Classes\Scene</Filter>
@@ -63,8 +63,23 @@
     <ClCompile Include="..\Classes\WorldRage.cpp">
       <Filter>Classes\Rage</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\WorldMapView.cpp">
+      <Filter>Classes\View\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\WorldMap.cpp">
+      <Filter>Classes\View\Map\LayerWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\InterfaceWorldView.cpp">
+      <Filter>Classes\View\Map\LayerWorld</Filter>
+    </ClCompile>
     <ClCompile Include="..\Classes\MenuView.cpp">
-      <Filter>Classes\View</Filter>
+      <Filter>Classes\View\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\RegionMap.cpp">
+      <Filter>Classes\View\Map\LayerMap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\RegionMapView.cpp">
+      <Filter>Classes\View\Map</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -76,15 +91,6 @@
     </ClInclude>
     <ClInclude Include="..\Classes\LogoScene.h">
       <Filter>Classes\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\MapView.h">
-      <Filter>Classes\View\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\RegionMap.h">
-      <Filter>Classes\View\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\WorldMap.h">
-      <Filter>Classes\View\Map</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\MainScene.h">
       <Filter>Classes\Scene</Filter>
@@ -107,8 +113,23 @@
     <ClInclude Include="..\Classes\WorldRage.h">
       <Filter>Classes\Rage</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\WorldMapView.h">
+      <Filter>Classes\View\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\WorldMap.h">
+      <Filter>Classes\View\Map\LayerWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\InterfaceWorldView.h">
+      <Filter>Classes\View\Map\LayerWorld</Filter>
+    </ClInclude>
     <ClInclude Include="..\Classes\MenuView.h">
-      <Filter>Classes\View</Filter>
+      <Filter>Classes\View\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\RegionMap.h">
+      <Filter>Classes\View\Map\LayerMap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\RegionMapView.h">
+      <Filter>Classes\View\Map</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

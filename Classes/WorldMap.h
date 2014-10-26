@@ -8,47 +8,40 @@ USING_NS_CC;
 class WorldMap : public cocos2d::Layer
 {
 private:
-	Sprite* _map;
-	Sprite* _fon;
-	Sprite* _plus;
-	Sprite* _minus;
-
 	Size _size;
+	Sprite* _map;
 
+	
+	//минимальный скалинг
 	float _minScaleMapX;
 	float _minScaleMapY;
-	float _scaleMap;
-	bool _moveMap;
-	Point _moveMapPoint;
-	Point _mapPoint;
+	
+	bool _moveMap;//true если карта двигаеться
+	Point _mapPoint;//координаты положения карты
+	Point _moveMapPoint;//координаты после движения карты
+	bool _move;//true если карта двигалась
 
-	EventListenerTouchOneByOne* _touchListener;
-	bool _action;
+	void initMinScale();//вычисляем минимальный скалинг
+	bool isClickMap(Touch* touch);//клик по карте?
 
-	void initFonAndMap();
-	void initMinScale();
-	void initPlusMinus();
-	void initTouch();
-
-	bool isClickPlus(Touch* touch);
-	bool isClickMinus(Touch* touch);
-	bool isClickMap(Touch* touch);
-
-	void clickPlus();
-	void clickMinus();
-
-	void updateScaleMap();
-	void mapPointReset();
-	void updatePosition();
+	void mapPointReset();//сбрасываем положение карты по умолчанию
+	void updatePosition();//обвноляем положение карты
 
 	bool isBounds(Touch* event, int x, int y, int width, int height);
+
 public:
 	virtual bool init();
 	CREATE_FUNC(WorldMap);
 
-	virtual bool touchBegan(Touch* touch, Event* event);
-	virtual void touchMoved(Touch* touch, Event* event);
-	virtual void touchEnded(Touch* touch, Event* event);
+	bool touchBegan(Touch* touch, Event* event);
+	void touchMoved(Touch* touch, Event* event);
+	void touchEnded(Touch* touch, Event* event);
+
+	void updateScaleMap(float scaleMap);//обновляем масштабирование карты
+
+	int _idSelectRegion;
+	bool isSelectRegion(Touch* touch);
+	int SelectRegion(float x, float y);
 
 };
 

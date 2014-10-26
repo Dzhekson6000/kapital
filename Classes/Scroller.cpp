@@ -84,7 +84,7 @@ void Scroller::touchEnded(Touch* touch, Event* event)
 	{
 		goToRage(_menuView->selectMenuItem(touch->getLocation().x));
 	}
-
+	updateActive();
 }
 
 void Scroller::goToRage(int n)
@@ -92,4 +92,21 @@ void Scroller::goToRage(int n)
 	_positionX = _size.width*n;
 	_menuView->onSelect(n);
 	_scroll->setPositionX(-_positionX);
+}
+
+void Scroller::updateActive()
+{
+	int n = floor(_positionX / _size.width);
+
+	
+	for ( int i=0; i< _rageList.size(); ++i )
+	{
+		if(_rageList[i]->getId() == n)
+		{
+			_rageList[i]->setActive(true);
+		} else {
+			_rageList[i]->setActive(false);
+		}
+	}
+
 }

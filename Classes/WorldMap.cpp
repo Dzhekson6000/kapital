@@ -6,36 +6,39 @@ bool WorldMap::init()
     {
         return false;
     }
-
 	_size = Director::getInstance()->getWinSize();
 	_size.height = _size.height - 87*(_size.width/2600);
-	
-	initFonAndMap();
-	_action = true;
-	_moveMap = false;
-	_scaleMap = 0;
 
-	initPlusMinus();
-	initTouch();
+	//применяем значение по умолчанию
+	_moveMap = false;
+	_idSelectRegion = 0;
+
+
+	_map = Sprite::create("img/map/world_map.png");
+	initMinScale();//получаем минимальный скалинг
+	_map->setScale(_minScaleMapX, _minScaleMapY);
+	mapPointReset();//ставим в точке по центру
+	_map->setPosition(_mapPoint);
+	this->addChild(_map);
+
 
 	return true;
 }
 
 bool WorldMap::touchBegan(Touch *touch, Event *event)
 {
-	if(_action)
+	if(isClickMap(touch) )
 	{
-		if(isClickMap(touch) )
-			{
-				_moveMap = true;
-				_moveMapPoint = touch->getLocation();
-			}
+		_moveMap = true;
+		_moveMapPoint = touch->getLocation();
 	}
+	
 	return true;
 }
 
 void WorldMap::touchMoved(Touch* touch, Event* event)
 {
+	_move = true;
 	if(_moveMap)
 	{
 		float deviationX = touch->getLocation().x - _moveMapPoint.x;
@@ -50,54 +53,26 @@ void WorldMap::touchMoved(Touch* touch, Event* event)
 		updatePosition();
 		
 	}
+	
 }
 
 void WorldMap::touchEnded(Touch* touch, Event* event)
 {
-	if(_action)
+	if(_moveMap)
 	{
-		if(isClickPlus(touch) )
-		{
-			clickPlus();
-		}
-
-		if(isClickMinus(touch) )
-		{
-			clickMinus();
-		}
-		if(_moveMap)
-		{
-			_moveMap = false;
-		}
+		_moveMap = false;
 	}
+	_move = false;
+	
 }
 
-void WorldMap::clickPlus()
-{
-	_scaleMap+=1;
-	updateScaleMap();
-}
 
-void WorldMap::clickMinus()
-{
-	if(_scaleMap > 0)_scaleMap-=1;
-	updateScaleMap();
-}
 
-void WorldMap::updateScaleMap()
+void WorldMap::updateScaleMap(float scaleMap)
 {
-	_map->setScaleX(_minScaleMapX + _scaleMap);
-	_map->setScaleY(_minScaleMapY + _scaleMap);
+	_map->setScaleX(_minScaleMapX + scaleMap);
+	_map->setScaleY(_minScaleMapY + scaleMap);
 	updatePosition();
-}
-
-void WorldMap::initTouch()
-{
-	_touchListener = EventListenerTouchOneByOne::create();
-	_touchListener->onTouchBegan = CC_CALLBACK_2(WorldMap::touchBegan,this);
-	_touchListener->onTouchMoved = CC_CALLBACK_2(WorldMap::touchMoved, this);
-	_touchListener->onTouchEnded = CC_CALLBACK_2(WorldMap::touchEnded,this);
-	getEventDispatcher()->addEventListenerWithFixedPriority(_touchListener, 100);
 }
 
 void WorldMap::initMinScale()
@@ -106,32 +81,9 @@ void WorldMap::initMinScale()
 	_minScaleMapY = _size.height/_map->getContentSize().height * 0.85;
 }
 
-void WorldMap::initPlusMinus()
-{
-	_plus = Sprite::create("img/map/plus.png");
-	_minus = Sprite::create("img/map/minus.png");
 
-	_plus->setScaleX(_size.width* 0.017/ _minus->getContentSize().width );
-	_plus->setScaleY(_size.height* 0.027/ _minus->getContentSize().height );
-	_plus->setPosition(Point(_size.width*0.49, _size.height*0.1) );
-	this->addChild(_plus);
 
-	_minus->setScaleX(_size.width* 0.017/ _minus->getContentSize().width );
-	_minus->setScaleY(_size.height* 0.027/ _minus->getContentSize().height );
-	_minus->setPosition(Point(_size.width*0.49, _size.height*0.066) );
-	this->addChild(_minus);
-}
 
-bool WorldMap::isClickPlus(Touch* touch)
-{
-	float width = _plus->getContentSize().width * _plus->getScaleX();
-	float height = _plus->getContentSize().height * _plus->getScaleY();
-	if(isBounds(touch, _plus->getPositionX(), _plus->getPositionY(), width, height) )
-	{
-		return true;
-	}
-	return false;
-}
 
 bool WorldMap::isClickMap(Touch* touch)
 {
@@ -142,35 +94,6 @@ bool WorldMap::isClickMap(Touch* touch)
 		return true;
 	}
 	return false;
-}
-
-bool WorldMap::isClickMinus(Touch* touch)
-{
-	float width = _minus->getContentSize().width * _minus->getScaleX();
-	float height = _minus->getContentSize().height * _minus->getScaleY();
-	if(isBounds(touch, _minus->getPositionX(), _minus->getPositionY(), width, height) )
-	{
-		return true;
-	}
-	return false;
-}
-
-
-void WorldMap::initFonAndMap()
-{
-	_map = Sprite::create("img/map/world_map.png");
-	initMinScale();
-	_map->setScaleX(_minScaleMapX);
-	_map->setScaleY(_minScaleMapY);
-	mapPointReset();
-	_map->setPosition(_mapPoint);
-	this->addChild(_map,-1);
-
-	_fon = Sprite::create("img/map/WorldRageFon.png");
-	_fon->setScaleX(_size.width/_fon->getContentSize().width);
-	_fon->setScaleY(_size.height /_fon->getContentSize().height);
-	_fon->setPosition(Point(_size.width/2, _size.height/2) );
-	this->addChild(_fon, 0);
 }
 
 bool WorldMap::isBounds(Touch* event, int x, int y, int width, int height)
@@ -218,5 +141,36 @@ void WorldMap::updatePosition(){
 	}
 
 	_map->setPosition(_mapPoint);
+}
 
+bool WorldMap::isSelectRegion(Touch* touch)
+{
+	return (isClickMap(touch) && !_move );
+
+}
+
+int WorldMap::SelectRegion(float x, float y)
+{
+	float width = _size.width * 0.51;
+	float height = _size.height * 0.85;
+
+	float xClick;
+	float yClick;
+	int xSelected = 0;
+	int ySelected = 0;
+
+	xClick =  x;
+	yClick =  _size.height - y;
+
+	xSelected = xClick/_map->getScaleX();//scall
+	xSelected += _mapPoint.x - _size.width*0.51/2;//scrool
+	float d = _mapPoint.x;
+	ySelected = yClick/_map->getScaleY();
+
+	//800x800
+	//int IdRegion = ( (ySelected-1) * 800) + xSelected;
+	//нужно определить ID региона по которому кликнули.
+	_idSelectRegion = 1;
+	CCLOG("ClickSelectRegion");
+	return _idSelectRegion;
 }
