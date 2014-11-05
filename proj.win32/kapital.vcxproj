@@ -137,6 +137,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\AuthorizationScene.cpp" />
     <ClCompile Include="..\Classes\ChatRage.cpp" />
     <ClCompile Include="..\Classes\InterfaceWorldView.cpp" />
+    <ClCompile Include="..\Classes\RegionMapObject.cpp" />
     <ClCompile Include="..\Classes\MenuView.cpp" />
     <ClCompile Include="..\Classes\ProfilRage.cpp" />
     <ClCompile Include="..\Classes\Rage.cpp" />
@@ -146,7 +147,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\LogoScene.cpp" />
     <ClCompile Include="..\Classes\WorldMapView.cpp" />
     <ClCompile Include="..\Classes\MainScene.cpp" />
-    <ClCompile Include="..\Classes\RegionMap.cpp" />
+    <ClCompile Include="..\Classes\FonRegionMap.cpp" />
     <ClCompile Include="..\Classes\WorldRage.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -155,6 +156,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\AuthorizationScene.h" />
     <ClInclude Include="..\Classes\ChatRage.h" />
     <ClInclude Include="..\Classes\InterfaceWorldView.h" />
+    <ClInclude Include="..\Classes\RegionMapObject.h" />
     <ClInclude Include="..\Classes\MenuView.h" />
     <ClInclude Include="..\Classes\ProfilRage.h" />
     <ClInclude Include="..\Classes\Rage.h" />
@@ -164,7 +166,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\LogoScene.h" />
     <ClInclude Include="..\Classes\WorldMapView.h" />
     <ClInclude Include="..\Classes\MainScene.h" />
-    <ClInclude Include="..\Classes\RegionMap.h" />
+    <ClInclude Include="..\Classes\FonRegionMap.h" />
     <ClInclude Include="..\Classes\WorldRage.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>

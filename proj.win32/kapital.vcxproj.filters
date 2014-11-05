@@ -75,11 +75,14 @@
     <ClCompile Include="..\Classes\MenuView.cpp">
       <Filter>Classes\View\Menu</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\RegionMap.cpp">
-      <Filter>Classes\View\Map\LayerMap</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\RegionMapView.cpp">
       <Filter>Classes\View\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FonRegionMap.cpp">
+      <Filter>Classes\View\Map\LayerMap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\RegionMapObject.cpp">
+      <Filter>Classes\View\Map\LayerMap</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -125,11 +128,14 @@
     <ClInclude Include="..\Classes\MenuView.h">
       <Filter>Classes\View\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\RegionMap.h">
-      <Filter>Classes\View\Map\LayerMap</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\RegionMapView.h">
       <Filter>Classes\View\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FonRegionMap.h">
+      <Filter>Classes\View\Map\LayerMap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\RegionMapObject.h">
+      <Filter>Classes\View\Map\LayerMap</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

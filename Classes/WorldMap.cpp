@@ -115,7 +115,8 @@ void WorldMap::mapPointReset()
 		_size.height/2 * 1.15);
 }
 
-void WorldMap::updatePosition(){
+void WorldMap::updatePosition()
+{
 	float width = _map->getContentSize().width * _map->getScaleX();
 	float height = _map->getContentSize().height * _map->getScaleY();
 
