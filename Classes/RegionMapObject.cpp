@@ -1,24 +1,52 @@
 #include "RegionMapObject.h"
 
-bool RegionMapObject::init()
+RegionMapObject::RegionMapObject(PPoint* point, std::string textureName, int width, int height)
 {
-	if ( !Layer::init() )
-    {
-        return false;
-    }
+	this->_width = width;
+	this->_height = height;
+	this->_pPoint = point;
+	this->_textureName = textureName;
+	this->_sprite = Sprite::create("img/map/Object/" + textureName + ".png");
+	this->_sprite->setPosition(point->getX(), point->getY());
 }
 
-
-void RegionMapObject::createTile(float x, float y, std::string tip)
+RegionMapObject::~RegionMapObject()
 {
-	Sprite* newSprite = Sprite::create("img/map/Object/"+tip+".png");
-	newSprite->setScaleX(1);
-	newSprite->setScaleY(1);
+	delete _pPoint;
+}
 
-	//x1 = x – z;
-	//y1 = (x + z) * 0.5;
-	newSprite->setPosition(Point(x-y, (x+y)/2) );
+int RegionMapObject::getWidth()
+{
+	return this->_width;
+}
 
+int RegionMapObject::getHeight()
+{
+	return this->_height;
+}
 
-	this->addChild(newSprite);
+void RegionMapObject::setWidth(int width)
+{
+	this->_width = width;
+}
+
+void RegionMapObject::setHeight(int height)
+{
+	this->_height = height;
+}
+
+Sprite* RegionMapObject::getTexture() 
+{
+	return _sprite;
+}
+
+std::string RegionMapObject::getTextureName()
+{
+	return _textureName;
+}
+
+void RegionMapObject::setTexture(std::string textureName) {
+	this->_textureName = textureName;
+	Texture2D *t= Director::getInstance()->getTextureCache()->addImage(textureName + ".png");
+	this->_sprite->setTexture(t);
 }
