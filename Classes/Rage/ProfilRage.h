@@ -1,7 +1,7 @@
 #ifndef PROFIL_RAGE_H_
 #define PROFIL_RAGE_H_
 
-#include "Rage.h"
+#include "Tools/Rage.h"
 
 USING_NS_CC;
 

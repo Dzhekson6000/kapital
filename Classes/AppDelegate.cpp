@@ -1,5 +1,5 @@
 #include "AppDelegate.h"
-#include "LogoScene.h"
+#include "Scene/LogoScene.h"
 
 USING_NS_CC;
 
@@ -16,7 +16,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLView::create("kapitel");
+        glview = GLView::create("kapital");
         director->setOpenGLView(glview);
     }
 

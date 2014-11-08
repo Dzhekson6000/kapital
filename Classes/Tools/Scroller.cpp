@@ -3,7 +3,6 @@
 
 bool Scroller::init()
 {
-
 	if ( !Layer::init() )  {
         return false;
     }
@@ -11,20 +10,26 @@ bool Scroller::init()
 	_size = Director::getInstance()->getWinSize();
 	_positionX = 0;
 	_moved = false;
-	_menuView = MenuView::create();
 
 	_scroll = Layer::create();
-	_scroll->setPosition(Point(0,0));
 	this->addChild(_scroll);
 
-	auto touchListener = EventListenerTouchOneByOne::create();
-	touchListener->onTouchBegan = CC_CALLBACK_2(Scroller::touchBegan,this);
-	touchListener->onTouchMoved = CC_CALLBACK_2(Scroller::touchMoved, this);
-	touchListener->onTouchEnded = CC_CALLBACK_2(Scroller::touchEnded,this);
-	getEventDispatcher()->addEventListenerWithFixedPriority(touchListener, 100);
-
+	_menuView = MenuView::create();
 	this->addChild(_menuView);
+
+	initTouch();
+
+	
 	return true;
+}
+
+void Scroller::initTouch()
+{
+	_touchListener = EventListenerTouchOneByOne::create();
+	_touchListener->onTouchBegan = CC_CALLBACK_2(Scroller::touchBegan,this);
+	_touchListener->onTouchMoved = CC_CALLBACK_2(Scroller::touchMoved, this);
+	_touchListener->onTouchEnded = CC_CALLBACK_2(Scroller::touchEnded,this);
+	getEventDispatcher()->addEventListenerWithFixedPriority(_touchListener, 100);
 }
 
 void Scroller::addRage(Rage* rage, int n)
@@ -98,8 +103,7 @@ void Scroller::updateActive()
 {
 	int n = floor(_positionX / _size.width);
 
-	
-	for ( int i=0; i< _rageList.size(); ++i )
+	for (unsigned int i=0; i < _rageList.size(); ++i )
 	{
 		if(_rageList[i]->getId() == n)
 		{

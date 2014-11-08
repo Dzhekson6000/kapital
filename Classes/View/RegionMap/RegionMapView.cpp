@@ -18,9 +18,7 @@ bool RegionMapView::init()
 void RegionMapView::initRegion(int idRegion)
 {
 	_fonRegionMap = FonRegionMap::create();
-	_regionMapObject = RegionMapObject::create();
 	_regionMap->addChild(_fonRegionMap);
-	_regionMap->addChild(_regionMapObject);
 }
 
 void RegionMapView::initTouch()

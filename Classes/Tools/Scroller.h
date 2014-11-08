@@ -3,12 +3,15 @@
 
 #include "cocos2d.h"
 #include "Rage.h"
-#include "MenuView.h";
+#include "View/MenuView.h"
 USING_NS_CC;
 
 class Scroller : public cocos2d::Layer
 {
 private:
+	void initTouch();
+	EventListenerTouchOneByOne* _touchListener;
+
 	Size _size;
 	Layer* _scroll;
 

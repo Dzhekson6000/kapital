@@ -69,7 +69,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(EngineRoot)cocos\audio\include;$(EngineRoot)external;$(EngineRoot)external\chipmunk\include\chipmunk;$(EngineRoot)extensions;..\Classes;..;$(EngineRoot);$(EngineRoot)extensions\GUI;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -88,6 +88,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
     </Link>
     <PostBuildEvent>
       <Command>
@@ -134,40 +135,44 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
-    <ClCompile Include="..\Classes\AuthorizationScene.cpp" />
-    <ClCompile Include="..\Classes\ChatRage.cpp" />
-    <ClCompile Include="..\Classes\InterfaceWorldView.cpp" />
-    <ClCompile Include="..\Classes\RegionMapObject.cpp" />
-    <ClCompile Include="..\Classes\MenuView.cpp" />
-    <ClCompile Include="..\Classes\ProfilRage.cpp" />
-    <ClCompile Include="..\Classes\Rage.cpp" />
-    <ClCompile Include="..\Classes\RegionMapView.cpp" />
-    <ClCompile Include="..\Classes\Scroller.cpp" />
-    <ClCompile Include="..\Classes\WorldMap.cpp" />
-    <ClCompile Include="..\Classes\LogoScene.cpp" />
-    <ClCompile Include="..\Classes\WorldMapView.cpp" />
-    <ClCompile Include="..\Classes\MainScene.cpp" />
-    <ClCompile Include="..\Classes\FonRegionMap.cpp" />
-    <ClCompile Include="..\Classes\WorldRage.cpp" />
+    <ClCompile Include="..\Classes\Rage\ChatRage.cpp" />
+    <ClCompile Include="..\Classes\Rage\ProfilRage.cpp" />
+    <ClCompile Include="..\Classes\Rage\WorldRage.cpp" />
+    <ClCompile Include="..\Classes\Scene\AuthorizationScene.cpp" />
+    <ClCompile Include="..\Classes\Scene\LogoScene.cpp" />
+    <ClCompile Include="..\Classes\Scene\MainScene.cpp" />
+    <ClCompile Include="..\Classes\Tools\PPoint.cpp" />
+    <ClCompile Include="..\Classes\Tools\Rage.cpp" />
+    <ClCompile Include="..\Classes\Tools\Scroller.cpp" />
+    <ClCompile Include="..\Classes\View\MenuView.cpp" />
+    <ClCompile Include="..\Classes\View\RegionMap\FonRegionMap.cpp" />
+    <ClCompile Include="..\Classes\View\RegionMap\RegionMapObject.cpp" />
+    <ClCompile Include="..\Classes\View\RegionMap\RegionMapView.cpp" />
+    <ClCompile Include="..\Classes\View\WorldMap\InterfaceWorldView.cpp" />
+    <ClCompile Include="..\Classes\View\WorldMap\WorldMap.cpp" />
+    <ClCompile Include="..\Classes\View\WorldMap\WorldMapView.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
-    <ClInclude Include="..\Classes\AuthorizationScene.h" />
-    <ClInclude Include="..\Classes\ChatRage.h" />
-    <ClInclude Include="..\Classes\InterfaceWorldView.h" />
-    <ClInclude Include="..\Classes\RegionMapObject.h" />
-    <ClInclude Include="..\Classes\MenuView.h" />
-    <ClInclude Include="..\Classes\ProfilRage.h" />
-    <ClInclude Include="..\Classes\Rage.h" />
-    <ClInclude Include="..\Classes\RegionMapView.h" />
-    <ClInclude Include="..\Classes\Scroller.h" />
-    <ClInclude Include="..\Classes\WorldMap.h" />
-    <ClInclude Include="..\Classes\LogoScene.h" />
-    <ClInclude Include="..\Classes\WorldMapView.h" />
-    <ClInclude Include="..\Classes\MainScene.h" />
-    <ClInclude Include="..\Classes\FonRegionMap.h" />
-    <ClInclude Include="..\Classes\WorldRage.h" />
+    <ClInclude Include="..\Classes\Rage\ChatRage.h" />
+    <ClInclude Include="..\Classes\Rage\ProfilRage.h" />
+    <ClInclude Include="..\Classes\Rage\WorldRage.h" />
+    <ClInclude Include="..\Classes\Scene\AuthorizationScene.h" />
+    <ClInclude Include="..\Classes\Scene\LogoScene.h" />
+    <ClInclude Include="..\Classes\Scene\MainScene.h" />
+    <ClInclude Include="..\Classes\Tools\List.h" />
+    <ClInclude Include="..\Classes\Tools\PPoint.h" />
+    <ClInclude Include="..\Classes\Tools\Rage.h" />
+    <ClInclude Include="..\Classes\Tools\Scroller.h" />
+    <ClInclude Include="..\Classes\View\MenuView.h" />
+    <ClInclude Include="..\Classes\View\RegionMap\FonRegionMap.h" />
+    <ClInclude Include="..\Classes\View\RegionMap\RegionMapDate.h" />
+    <ClInclude Include="..\Classes\View\RegionMap\RegionMapObject.h" />
+    <ClInclude Include="..\Classes\View\RegionMap\RegionMapView.h" />
+    <ClInclude Include="..\Classes\View\WorldMap\InterfaceWorldView.h" />
+    <ClInclude Include="..\Classes\View\WorldMap\WorldMap.h" />
+    <ClInclude Include="..\Classes\View\WorldMap\WorldMapView.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +182,9 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     </ProjectReference>
     <ProjectReference Include="..\cocos2d\cocos\audio\proj.win32\CocosDenshion.vcxproj">
       <Project>{f8edd7fa-9a51-4e80-baeb-860825d2eac6}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\cocos2d\extensions\proj.win32\libExtensions.vcxproj">
+      <Project>{21b2c324-891f-48ea-ad1a-5ae13de12e28}</Project>
     </ProjectReference>
     <ProjectReference Include="..\cocos2d\external\chipmunk\proj.win32\chipmunk.vcxproj">
       <Project>{207bc7a9-ccf1-4f2f-a04d-45f72242ae25}</Project>

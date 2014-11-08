@@ -10,26 +10,23 @@
     <Filter Include="resource">
       <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Tools">
+      <UniqueIdentifier>{2ef58a01-88f2-4018-b1b2-cefd49906ef1}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Classes\Scene">
-      <UniqueIdentifier>{b30ce8ae-2c1f-4b08-8dca-8f070acbb75a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\View">
-      <UniqueIdentifier>{237fe32a-28a6-4c99-bfae-99cf8ed53da2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\View\Map">
-      <UniqueIdentifier>{b96899d7-198f-4e6b-a0a4-0fa6ea12fb5f}</UniqueIdentifier>
+      <UniqueIdentifier>{0d366a23-e72b-4ee7-bac5-a01cca235ab3}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\Rage">
-      <UniqueIdentifier>{918dc2c0-4814-433e-80fa-d59fc33418bb}</UniqueIdentifier>
+      <UniqueIdentifier>{986d449f-dc70-41c5-8a29-19a4f09e0866}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\View\Menu">
-      <UniqueIdentifier>{fe544dca-81c7-4e6a-9e9e-4ee4375c0253}</UniqueIdentifier>
+    <Filter Include="Classes\View">
+      <UniqueIdentifier>{7e137d14-aa8b-4da4-a254-75d914bce6bd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\View\Map\LayerWorld">
-      <UniqueIdentifier>{34524a71-ebd5-4a42-adbf-dde3bd46d5a7}</UniqueIdentifier>
+    <Filter Include="Classes\View\WorldMap">
+      <UniqueIdentifier>{40874f04-e091-4061-8cb6-40af7d1af2ce}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\View\Map\LayerMap">
-      <UniqueIdentifier>{27fe3967-05e8-465e-86eb-41813ccdcee1}</UniqueIdentifier>
+    <Filter Include="Classes\View\RegionMap">
+      <UniqueIdentifier>{0405fe8a-0f10-4dfb-a8b8-f7b0af7c56d1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -39,50 +36,53 @@
     <ClCompile Include="..\Classes\AppDelegate.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\LogoScene.cpp">
+    <ClCompile Include="..\Classes\Tools\PPoint.cpp">
+      <Filter>Classes\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Tools\Rage.cpp">
+      <Filter>Classes\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Tools\Scroller.cpp">
+      <Filter>Classes\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Scene\AuthorizationScene.cpp">
       <Filter>Classes\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\MainScene.cpp">
+    <ClCompile Include="..\Classes\Scene\LogoScene.cpp">
       <Filter>Classes\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Rage.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Scroller.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\AuthorizationScene.cpp">
+    <ClCompile Include="..\Classes\Scene\MainScene.cpp">
       <Filter>Classes\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\ChatRage.cpp">
+    <ClCompile Include="..\Classes\Rage\ChatRage.cpp">
       <Filter>Classes\Rage</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\ProfilRage.cpp">
+    <ClCompile Include="..\Classes\Rage\ProfilRage.cpp">
       <Filter>Classes\Rage</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\WorldRage.cpp">
+    <ClCompile Include="..\Classes\Rage\WorldRage.cpp">
       <Filter>Classes\Rage</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\WorldMapView.cpp">
-      <Filter>Classes\View\Map</Filter>
+    <ClCompile Include="..\Classes\View\MenuView.cpp">
+      <Filter>Classes\View</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\WorldMap.cpp">
-      <Filter>Classes\View\Map\LayerWorld</Filter>
+    <ClCompile Include="..\Classes\View\RegionMap\FonRegionMap.cpp">
+      <Filter>Classes\View\RegionMap</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\InterfaceWorldView.cpp">
-      <Filter>Classes\View\Map\LayerWorld</Filter>
+    <ClCompile Include="..\Classes\View\RegionMap\RegionMapObject.cpp">
+      <Filter>Classes\View\RegionMap</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\MenuView.cpp">
-      <Filter>Classes\View\Menu</Filter>
+    <ClCompile Include="..\Classes\View\RegionMap\RegionMapView.cpp">
+      <Filter>Classes\View\RegionMap</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\RegionMapView.cpp">
-      <Filter>Classes\View\Map</Filter>
+    <ClCompile Include="..\Classes\View\WorldMap\InterfaceWorldView.cpp">
+      <Filter>Classes\View\WorldMap</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\FonRegionMap.cpp">
-      <Filter>Classes\View\Map\LayerMap</Filter>
+    <ClCompile Include="..\Classes\View\WorldMap\WorldMap.cpp">
+      <Filter>Classes\View\WorldMap</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\RegionMapObject.cpp">
-      <Filter>Classes\View\Map\LayerMap</Filter>
+    <ClCompile Include="..\Classes\View\WorldMap\WorldMapView.cpp">
+      <Filter>Classes\View\WorldMap</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -92,50 +92,59 @@
     <ClInclude Include="..\Classes\AppDelegate.h">
       <Filter>Classes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\LogoScene.h">
+    <ClInclude Include="..\Classes\Tools\List.h">
+      <Filter>Classes\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Tools\PPoint.h">
+      <Filter>Classes\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Tools\Rage.h">
+      <Filter>Classes\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Tools\Scroller.h">
+      <Filter>Classes\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scene\AuthorizationScene.h">
       <Filter>Classes\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\MainScene.h">
+    <ClInclude Include="..\Classes\Scene\LogoScene.h">
       <Filter>Classes\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Rage.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Scroller.h">
-      <Filter>Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\AuthorizationScene.h">
+    <ClInclude Include="..\Classes\Scene\MainScene.h">
       <Filter>Classes\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\ChatRage.h">
+    <ClInclude Include="..\Classes\Rage\ChatRage.h">
       <Filter>Classes\Rage</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\ProfilRage.h">
+    <ClInclude Include="..\Classes\Rage\ProfilRage.h">
       <Filter>Classes\Rage</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\WorldRage.h">
+    <ClInclude Include="..\Classes\Rage\WorldRage.h">
       <Filter>Classes\Rage</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\WorldMapView.h">
-      <Filter>Classes\View\Map</Filter>
+    <ClInclude Include="..\Classes\View\MenuView.h">
+      <Filter>Classes\View</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\WorldMap.h">
-      <Filter>Classes\View\Map\LayerWorld</Filter>
+    <ClInclude Include="..\Classes\View\RegionMap\FonRegionMap.h">
+      <Filter>Classes\View\RegionMap</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\InterfaceWorldView.h">
-      <Filter>Classes\View\Map\LayerWorld</Filter>
+    <ClInclude Include="..\Classes\View\RegionMap\RegionMapDate.h">
+      <Filter>Classes\View\RegionMap</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\MenuView.h">
-      <Filter>Classes\View\Menu</Filter>
+    <ClInclude Include="..\Classes\View\RegionMap\RegionMapObject.h">
+      <Filter>Classes\View\RegionMap</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\RegionMapView.h">
-      <Filter>Classes\View\Map</Filter>
+    <ClInclude Include="..\Classes\View\RegionMap\RegionMapView.h">
+      <Filter>Classes\View\RegionMap</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\FonRegionMap.h">
-      <Filter>Classes\View\Map\LayerMap</Filter>
+    <ClInclude Include="..\Classes\View\WorldMap\InterfaceWorldView.h">
+      <Filter>Classes\View\WorldMap</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\RegionMapObject.h">
-      <Filter>Classes\View\Map\LayerMap</Filter>
+    <ClInclude Include="..\Classes\View\WorldMap\WorldMap.h">
+      <Filter>Classes\View\WorldMap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\View\WorldMap\WorldMapView.h">
+      <Filter>Classes\View\WorldMap</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -12,6 +12,7 @@ bool ChatRage::init()
 	sprite->setScaleX(_size.width/sprite->getContentSize().width);
 	sprite->setScaleY(_size.height/sprite->getContentSize().height);
 	sprite->setPosition(Point(_size.width/2, _size.height/2));
+
 	this->addChild(sprite, 0);
 
 	return true;

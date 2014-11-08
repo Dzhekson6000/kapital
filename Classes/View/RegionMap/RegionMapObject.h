@@ -3,7 +3,7 @@
 
 
 #include "cocos2d.h"
-#include "PPoint.h"
+#include "Tools/PPoint.h"
 USING_NS_CC;
 
 class RegionMapObject

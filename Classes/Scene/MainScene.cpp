@@ -11,7 +11,7 @@ MainScene* MainScene::create(int id, std::string key)
 	return scene;
 }
 
-CCScene* MainScene::getScene() const {
+Scene* MainScene::getScene() const {
 	return _scene;
 }
 

@@ -3,10 +3,10 @@
 #define MAIN_SCENE_H_
 
 #include "cocos2d.h"
-#include "Scroller.h"
-#include "ProfilRage.h"
-#include "ChatRage.h"
-#include "WorldRage.h"
+#include "Tools/Scroller.h"
+#include "Rage/ProfilRage.h"
+#include "Rage/ChatRage.h"
+#include "Rage/WorldRage.h"
 
 USING_NS_CC;
 class MainScene : public cocos2d::Layer

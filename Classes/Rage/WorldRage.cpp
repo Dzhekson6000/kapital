@@ -24,8 +24,19 @@ bool WorldRage::init()
 
 void WorldRage::setActive(bool active)
 {
-	if(_worldMapView->isVisible())_worldMapView->setActive(active);
-	if(_regionMapView->isVisible())_regionMapView->setActive(active);
+	if(_worldMapView->isVisible())
+	{
+		_worldMapView->setActive(active);
+	} else {
+		_worldMapView->setActive(!active);
+	}
+
+	if(_regionMapView->isVisible())
+	{
+		_regionMapView->setActive(active);
+	} else {
+		_regionMapView->setActive(!active);
+	}
 }
 
 void WorldRage::update(float dt)

@@ -1,9 +1,9 @@
 #ifndef WORLD_RAGE_H_
 #define WORLD_RAGE_H_
 
-#include "Rage.h"
-#include "WorldMapView.h"
-#include "RegionMapView.h"
+#include "Tools/Rage.h"
+#include "View/WorldMap/WorldMapView.h"
+#include "View/RegionMap/RegionMapView.h"
 
 USING_NS_CC;
 
