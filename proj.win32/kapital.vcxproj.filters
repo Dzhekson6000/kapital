@@ -84,6 +84,12 @@
     <ClCompile Include="..\Classes\View\WorldMap\WorldMapView.cpp">
       <Filter>Classes\View\WorldMap</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Tools\Ractangle.cpp">
+      <Filter>Classes\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\View\RegionMap\RegionMapLoad.cpp">
+      <Filter>Classes\View\RegionMap</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -145,6 +151,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\View\WorldMap\WorldMapView.h">
       <Filter>Classes\View\WorldMap</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Tools\Ractangle.h">
+      <Filter>Classes\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\View\RegionMap\RegionMapLoad.h">
+      <Filter>Classes\View\RegionMap</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -142,10 +142,12 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\Scene\LogoScene.cpp" />
     <ClCompile Include="..\Classes\Scene\MainScene.cpp" />
     <ClCompile Include="..\Classes\Tools\PPoint.cpp" />
+    <ClCompile Include="..\Classes\Tools\Ractangle.cpp" />
     <ClCompile Include="..\Classes\Tools\Rage.cpp" />
     <ClCompile Include="..\Classes\Tools\Scroller.cpp" />
     <ClCompile Include="..\Classes\View\MenuView.cpp" />
     <ClCompile Include="..\Classes\View\RegionMap\FonRegionMap.cpp" />
+    <ClCompile Include="..\Classes\View\RegionMap\RegionMapLoad.cpp" />
     <ClCompile Include="..\Classes\View\RegionMap\RegionMapObject.cpp" />
     <ClCompile Include="..\Classes\View\RegionMap\RegionMapView.cpp" />
     <ClCompile Include="..\Classes\View\WorldMap\InterfaceWorldView.cpp" />
@@ -163,11 +165,13 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\Scene\MainScene.h" />
     <ClInclude Include="..\Classes\Tools\List.h" />
     <ClInclude Include="..\Classes\Tools\PPoint.h" />
+    <ClInclude Include="..\Classes\Tools\Ractangle.h" />
     <ClInclude Include="..\Classes\Tools\Rage.h" />
     <ClInclude Include="..\Classes\Tools\Scroller.h" />
     <ClInclude Include="..\Classes\View\MenuView.h" />
     <ClInclude Include="..\Classes\View\RegionMap\FonRegionMap.h" />
     <ClInclude Include="..\Classes\View\RegionMap\RegionMapDate.h" />
+    <ClInclude Include="..\Classes\View\RegionMap\RegionMapLoad.h" />
     <ClInclude Include="..\Classes\View\RegionMap\RegionMapObject.h" />
     <ClInclude Include="..\Classes\View\RegionMap\RegionMapView.h" />
     <ClInclude Include="..\Classes\View\WorldMap\InterfaceWorldView.h" />
